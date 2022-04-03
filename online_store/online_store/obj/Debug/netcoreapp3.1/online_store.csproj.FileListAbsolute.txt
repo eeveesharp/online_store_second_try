@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\online_store.exe
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\online_store.deps.json
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\online_store.runtimeconfig.json
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\online_store.runtimeconfig.dev.json
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\online_store.dll
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\online_store.pdb
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.csprojAssemblyReference.cache
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.AssemblyInfo.cs
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.dll
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.pdb
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.genruntimeconfig.cache
