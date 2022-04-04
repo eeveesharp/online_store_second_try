@@ -26,6 +26,8 @@ namespace online_store.Menus
 
                 IIdentityServices identity = new IdentityServices();
 
+                MainMenu mainMenu = new MainMenu();
+
                 Console.Clear();
 
                 switch (authMenuType)
@@ -35,6 +37,8 @@ namespace online_store.Menus
                             SingInServices singIn = new SingInServices(identity);
 
                             singIn.Authorization();
+
+                            mainMenu.Menu();
 
                             break;
                         }
@@ -48,6 +52,8 @@ namespace online_store.Menus
                         }
                     case AuthMenuType.Third:
                         {
+                            Environment.Exit(0);
+
                             break;
                         }
                     default:

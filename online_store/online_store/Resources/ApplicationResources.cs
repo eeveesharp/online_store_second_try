@@ -10,7 +10,7 @@ namespace online_store.Pesources
 
         public const string AuthMenuSingUp = "2.Sing Up";
 
-        public const string AuthMenuExit = "3.Exit";
+        public const string AuthMenuExit = "3.Exit from program";
 
         public const string IsValid = "Error.Enter correct number";
 
@@ -23,5 +23,15 @@ namespace online_store.Pesources
         public const string EnterLastName = "Enter your lastname";
 
         public const string EnterMenuNumber = "Enter menu number";
+
+        public const string MainMenuShowCatalog = "1.Show catalog";
+
+        public const string MainMenuShowBasket = "2.Show basket";
+
+        public const string MainMenuSearchProduct = "3.Product search by name";
+
+        public const string MainMenuShowHistory = "4.Show history buy";
+
+        public const string MainMenuLogOut= "5.Log out of your account";
     }
 }

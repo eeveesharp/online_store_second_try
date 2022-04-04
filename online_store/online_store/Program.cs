@@ -7,7 +7,7 @@ namespace online_store
     {
         static void Main(string[] args)
         {
-            AuthMenu authMenu = new AuthMenu();
+            AuthMenu authMenu = new AuthMenu();           
 
             authMenu.Menu();
         }
