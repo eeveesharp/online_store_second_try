@@ -1,4 +1,5 @@
 ﻿using online_store.Interfaces;
+using online_store.Models;
 using online_store.Pesources;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,28 @@ namespace online_store.Services
 {
     class IdentityServices : IIdentityServices
     {
-        public string GetLogin()
+        public string GetLoginFromSingIn()
         {
             Console.WriteLine(ApplicationResources.EnterLogin);
 
             string login = Console.ReadLine();
+
+            Console.Clear();
+
+            return login;
+        }
+
+        public string GetLoginFromSingUp()
+        {
+            string login = string.Empty;
+
+            do
+            {
+                Console.WriteLine(ApplicationResources.EnterLogin);
+
+                login = Console.ReadLine();
+
+            } while (!Validation.IsCheckSingUp(login));
 
             Console.Clear();
 

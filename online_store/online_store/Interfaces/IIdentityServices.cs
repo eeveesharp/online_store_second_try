@@ -2,7 +2,9 @@
 {
     interface IIdentityServices
     {
-        public string GetLogin();
+        public string GetLoginFromSingUp();
+
+        public string GetLoginFromSingIn();
 
         public string GetPassword();
 

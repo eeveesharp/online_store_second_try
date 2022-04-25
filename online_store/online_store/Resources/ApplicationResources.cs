@@ -33,5 +33,9 @@ namespace online_store.Pesources
         public const string MainMenuShowHistory = "4.Show history buy";
 
         public const string MainMenuLogOut= "5.Log out of your account";
+
+        public const string UsersFileName = "Users";
+
+        public const string UsersIsFind = "User is find";
     }
 }

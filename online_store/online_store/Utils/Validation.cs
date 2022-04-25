@@ -1,5 +1,6 @@
 ﻿using online_store.Interfaces;
 using online_store.Pesources;
+using online_store.Storage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,7 +28,23 @@ namespace online_store
 
         public static bool IsCheckSingUp(string login)
         {
-            return false;
+            bool isLogin = false;
+
+            for (int i = 0; i < UserStorage.Users.Count; i++)
+            {
+                if (UserStorage.Users[i].Login == login)
+                {
+                    isLogin = false;
+
+                    Console.WriteLine(ApplicationResources.UsersIsFind);
+
+                    return isLogin;
+                }
+
+                isLogin = true;
+            }
+
+            return isLogin;
         }
     }
 }

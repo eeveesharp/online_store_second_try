@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,7 @@ namespace online_store.Models
 
         public string Password { get; set; }
 
+        [JsonConstructor]
         public User(string login, string password,string name,string lastName)
         {
             this.Login = login;
