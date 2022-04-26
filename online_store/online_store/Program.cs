@@ -2,6 +2,8 @@
 using online_store.Services;
 using online_store.Pesources;
 using System;
+using online_store.Storage;
+using online_store.Models;
 
 namespace online_store
 {
@@ -9,9 +11,7 @@ namespace online_store
     {
         static void Main(string[] args)
         {
-            FileServices fileServices = new FileServices();
-
-            fileServices.ReadFile(ApplicationResources.UsersFileName);
+            UserStorage.Users = FileServices<User>.ReadFile(UserStorage.Users, ApplicationResources.UsersFileName);
 
             AuthMenu authMenu = new AuthMenu();           
 

@@ -37,5 +37,7 @@ namespace online_store.Pesources
         public const string UsersFileName = "Users";
 
         public const string UsersIsFind = "User is find";
+
+        public const string ErrorSingIn = "Incorrect login or password";
     }
 }

@@ -12,3 +12,4 @@ C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debu
 C:\Users\User\Desktop\online_store_second_try\online_store\online_store\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.csproj.CopyComplete
+C:\Users\User\Desktop\online_store_second_try\online_store\online_store\obj\Debug\netcoreapp3.1\online_store.csprojAssemblyReference.cache

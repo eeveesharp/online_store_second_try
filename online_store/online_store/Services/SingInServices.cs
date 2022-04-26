@@ -12,8 +12,6 @@ namespace online_store.Services
     {
         private readonly IIdentityServices _identity;
 
-        private readonly FileServices FileServices = new FileServices();
-
         public SingInServices(IIdentityServices identity)
         {
             _identity = identity;
@@ -21,9 +19,16 @@ namespace online_store.Services
 
         public void Authorization()
         {
-            User currentUser = new User(GetLogin(), GetPassword());            
+            UserStorage.CurrentUser = new User(GetLogin(), GetPassword());
 
-            Validation.IsCheckSingIn(currentUser.Login, currentUser.Password);
+            while (Validation.IsCheckSingIn(UserStorage.CurrentUser.Login, UserStorage.CurrentUser.Password))
+            {
+                Console.WriteLine(ApplicationResources.ErrorSingIn);
+
+                UserStorage.CurrentUser = new User(GetLogin(), GetPassword());
+            }
+
+            Console.Title = $"User: {UserStorage.CurrentUser.Login}";
         }
 
         private string GetLogin() => _identity.GetLoginFromSingIn();

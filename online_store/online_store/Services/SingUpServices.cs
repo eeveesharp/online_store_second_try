@@ -12,8 +12,6 @@ namespace online_store.Services
     {
         private readonly IIdentityServices _identity;
 
-        private readonly FileServices fileServices = new FileServices();
-
         public SingUpServices(IIdentityServices identity)
         {
             this._identity = identity;
@@ -28,7 +26,7 @@ namespace online_store.Services
 
             UserStorage.Users.Add(user);
 
-            fileServices.WriteFile(UserStorage.Users, ApplicationResources.UsersFileName);                
+            FileServices<User>.WriteFile(UserStorage.Users, ApplicationResources.UsersFileName);                
         }
 
         private string GetLogin() => _identity.GetLoginFromSingUp();

@@ -10,21 +10,16 @@ using System.Text.Json;
 
 namespace online_store.Services
 {
-    class FileServices : IFileServices
+    static class FileServices<T> //: IFileServices
     {
-        public void ReadFile(string fileName)
-        {
-            UserStorage.Users = new List<User>();
+        public static List<T> ReadFile(List<T> items, string fileName)
+        {            
+            items = JsonConvert.DeserializeObject<List<T>>(ReadTextFromFile(fileName));
 
-            UserStorage.Users = JsonConvert.DeserializeObject<List<User>>(ReadTextFromFile(fileName));
-
-            if (UserStorage.Users is null)
-            {
-                UserStorage.Users = new List<User>();
-            }
+            return items;
         }
 
-        public void WriteFile(IEnumerable<object> items, string fileName)
+        public static void WriteFile(IEnumerable<object> items, string fileName)
         {
             using (FileStream fstream = new FileStream(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName +
                $"\\jsonFiles\\{fileName}.json",
@@ -36,7 +31,7 @@ namespace online_store.Services
             }             
         }
 
-        public string ReadTextFromFile(string filename)
+        public static string ReadTextFromFile(string filename)
         {
             string fileContent = string.Empty;
 

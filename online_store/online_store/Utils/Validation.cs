@@ -23,12 +23,23 @@ namespace online_store
 
         public static bool IsCheckSingIn(string login, string password)
         {
-            return false;
+            bool isSingIn = true;
+
+            for (int i = 0; i < UserStorage.Users.Count; i++)
+            {
+                if (UserStorage.Users[i].Login == login 
+                    && UserStorage.Users[i].Password == password)
+                {
+                    isSingIn = false;
+                }
+            }
+
+            return isSingIn;
         }
 
         public static bool IsCheckSingUp(string login)
         {
-            bool isLogin = false;
+            bool isLogin = true;
 
             for (int i = 0; i < UserStorage.Users.Count; i++)
             {
@@ -40,8 +51,6 @@ namespace online_store
 
                     return isLogin;
                 }
-
-                isLogin = true;
             }
 
             return isLogin;
