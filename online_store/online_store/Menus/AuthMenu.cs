@@ -10,23 +10,30 @@ namespace online_store.Menus
 {
     class AuthMenu
     {
-        public void Menu()
+        private readonly IPrinter _printer;
+
+        private readonly IIdentityServices _identity;
+
+        public AuthMenu(IPrinter printer, IIdentityServices identity)
         {
+            _printer = printer;
+
+            _identity = identity;
+        }
+
+        public void Menu()
+        {           
             bool isMenu = true;
 
             while (isMenu)
             {
-                Console.WriteLine($"{ApplicationResources.AuthMenuSingIn}\n" +
-               $"{ApplicationResources.AuthMenuSingUp}\n" +
-               $"{ApplicationResources.AuthMenuExit}");
+                _printer.ShowPointAuthMenu();
 
                 Console.WriteLine(ApplicationResources.EnterMenuNumber);
 
-                AuthMenuType authMenuType = (AuthMenuType)Validation.GetCorrectNumber();
+                AuthMenuType authMenuType = (AuthMenuType)Validation.GetCorrectNumber();             
 
-                IIdentityServices identity = new IdentityServices();
-
-                MainMenu mainMenu = new MainMenu();
+                MainMenu mainMenu = new MainMenu(_printer);
 
                 Console.Clear();
 
@@ -34,7 +41,7 @@ namespace online_store.Menus
                 {
                     case AuthMenuType.First:
                         {
-                            SingInServices singIn = new SingInServices(identity);
+                            SingInServices singIn = new SingInServices(_identity);
 
                             singIn.Authorization();
 
@@ -44,7 +51,7 @@ namespace online_store.Menus
                         }
                     case AuthMenuType.Second:
                         {
-                            SingUpServices singUp = new SingUpServices(identity);
+                            SingUpServices singUp = new SingUpServices(_identity);
 
                             singUp.Registration();
 

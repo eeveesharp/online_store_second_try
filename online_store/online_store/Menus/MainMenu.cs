@@ -1,4 +1,5 @@
 ﻿using online_store.Enums;
+using online_store.Interfaces;
 using online_store.Pesources;
 using System;
 using System.Collections.Generic;
@@ -8,17 +9,20 @@ namespace online_store.Menus
 {
     class MainMenu
     {
+        private readonly IPrinter _printer;
+
+        public MainMenu(IPrinter printer)
+        {
+            _printer = printer;
+        }
+
         public void Menu()
         {
             bool isMenu = true;           
 
             while (isMenu)
             {
-                Console.WriteLine($"{ApplicationResources.MainMenuShowCatalog}\n" +
-                    $"{ApplicationResources.MainMenuSearchProduct}\n" +
-                    $"{ApplicationResources.MainMenuShowBasket}\n" +
-                    $"{ApplicationResources.MainMenuShowHistory}\n" +
-                    $"{ApplicationResources.MainMenuLogOut}");
+                _printer.ShowPointMainMenu();
 
                 Console.WriteLine(ApplicationResources.EnterMenuNumber);
 
@@ -28,6 +32,8 @@ namespace online_store.Menus
                 {
                     case MainMenuType.First:
                         {
+                            _printer.ShowCatalog();
+
                             break;
                         }                      
                     case MainMenuType.Second:
@@ -47,6 +53,8 @@ namespace online_store.Menus
                     case MainMenuType.Fiveth:
                         {
                             Console.Clear();
+
+                            Console.Title = $"{ApplicationResources.NotSingIn}";
 
                             return;
                         }

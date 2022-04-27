@@ -4,6 +4,7 @@ using online_store.Pesources;
 using System;
 using online_store.Storage;
 using online_store.Models;
+using online_store.Interfaces;
 
 namespace online_store
 {
@@ -11,9 +12,17 @@ namespace online_store
     {
         static void Main(string[] args)
         {
+            Console.Title = $"{ApplicationResources.NotSingIn}";
+
             UserStorage.Users = FileServices<User>.ReadFile(UserStorage.Users, ApplicationResources.UsersFileName);
 
-            AuthMenu authMenu = new AuthMenu();           
+            ProductStorage.Products = FileServices<Product>.ReadFile(ProductStorage.Products, ApplicationResources.ProductsFileName);
+
+            IPrinter printer = new ConsolePrinter();
+
+            IIdentityServices identity = new IdentityServices();
+
+            AuthMenu authMenu = new AuthMenu(printer, identity);           
 
             authMenu.Menu();
         }
